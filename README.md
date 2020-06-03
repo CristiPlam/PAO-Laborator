@@ -13,10 +13,10 @@ Clase:
 
   -Copil
 
-  -Bilet
+-Bilet
 
-  -Spectacol
+-Spectacol
 
-  -Loc
+-Loc
 
   
