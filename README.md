@@ -3,7 +3,7 @@
 
 Clase:
 
--Client
+1.Client
 
   -Student
 
@@ -13,10 +13,10 @@ Clase:
 
   -Copil
 
--Bilet
+2.Bilet
 
--Spectacol
+3.Spectacol
 
--Loc
+4.Loc
 
   
