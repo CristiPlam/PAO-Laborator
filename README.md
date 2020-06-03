@@ -1,7 +1,7 @@
 # PAO-Laborator
 9. Rezervarea unui loc în sala de spectacol
 
-Clase:
+Clase
 -Client
  -Student
   -Elev
