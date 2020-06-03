@@ -3,7 +3,7 @@
 
 Clase:
 -Client
-  -Student
+ -Student
   -Elev
   -Pensionar
   -Copil
