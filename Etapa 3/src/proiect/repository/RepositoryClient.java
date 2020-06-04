@@ -43,7 +43,8 @@ public class RepositoryClient
     public ArrayList<Student> getStudenti()
     {
         ArrayList<Student> Studenti = new ArrayList<>();
-        for(Client client : rep_Client) {
+        for(Client client : rep_Client)
+        {
             if (client instanceof Student)
             {
                 Student student = (Student) client;

@@ -1,13 +1,6 @@
 package proiect.main;
 
-import proiect.model.Client;
-import proiect.model.Student;
-import proiect.model.Elev;
-import proiect.model.Pensionar;
-import proiect.model.Copil;
-import proiect.model.Bilet;
-import proiect.model.Spectacol;
-import proiect.service.ServiceBilet;
+import proiect.model.*;
 import proiect.service.ServiceClient;
 
 import javax.swing.*;
@@ -25,7 +18,7 @@ public class main extends JFrame implements ActionListener
 {
     private JMenuBar menubar;
     private JMenu x, x1, x2;
-    private JMenuItem i1, i2, i3, i4, i5, ii1, ii2;
+    private JMenuItem i1, i2, i3, i4, i5, ii1, ii2, ii3, ii4;
     private JLabel label;
     private JPanel panel;
     private JTextField nume, prenume;
@@ -49,6 +42,8 @@ public class main extends JFrame implements ActionListener
 
         ii1 = new JMenuItem("GetClienti");
         ii2 = new JMenuItem("GetBilete");
+        ii3 = new JMenuItem("GetCopii");
+        ii4 = new JMenuItem("GetStudenti");
 
         i1.addActionListener(this);
         i2.addActionListener(this);
@@ -58,6 +53,8 @@ public class main extends JFrame implements ActionListener
 
         ii1.addActionListener(this);
         ii2.addActionListener(this);
+        ii3.addActionListener(this);
+        ii4.addActionListener(this);
 
         x1.add(i1);
         x1.add(i2);
@@ -66,6 +63,8 @@ public class main extends JFrame implements ActionListener
         x1.add(i5);
         x2.add(ii1);
         x2.add(ii2);
+        x2.add(ii3);
+        x2.add(ii4);
         x.add(x1);
         x.add(x2);
         menubar.add(x);
@@ -127,6 +126,8 @@ public class main extends JFrame implements ActionListener
         service.getPensionari();
         service.addClient(new Student("George", "Ion", 20466));
         service.getStudenti();
+        service.getCopii();
+        service.citeste_clienti_din_csv();
         new main("GUI");
 
 
@@ -146,7 +147,7 @@ public class main extends JFrame implements ActionListener
                 panel = new JPanel();
                 JButton button = new JButton("Adauga Client");
 
-                panel.setBorder(BorderFactory.createEmptyBorder(300, 300, 100, 300));
+                panel.setBorder(BorderFactory.createEmptyBorder(200, 200, 100, 200));
                 panel.setLayout(new GridLayout(0, 1));
 
                 JLabel label1 = new JLabel("Numele Clientului");
@@ -181,7 +182,7 @@ public class main extends JFrame implements ActionListener
                 panel = new JPanel();
                 JButton button = new JButton("Adauga Client");
 
-                panel.setBorder(BorderFactory.createEmptyBorder(300, 300, 100, 300));
+                panel.setBorder(BorderFactory.createEmptyBorder(200, 200, 100, 200));
                 panel.setLayout(new GridLayout(0, 1));
 
                 JLabel label1 = new JLabel("Numele Clientului");
@@ -216,7 +217,7 @@ public class main extends JFrame implements ActionListener
                 panel = new JPanel();
                 JButton button = new JButton("Adauga Client");
 
-                panel.setBorder(BorderFactory.createEmptyBorder(300, 300, 100, 300));
+                panel.setBorder(BorderFactory.createEmptyBorder(200, 200, 100, 200));
                 panel.setLayout(new GridLayout(0, 1));
 
                 JLabel label1 = new JLabel("Numele Clientului");
@@ -237,9 +238,33 @@ public class main extends JFrame implements ActionListener
                 frame.setTitle("Client");
                 frame.pack();
                 frame.setVisible(true);
+                
             }
         }
         else
+        {
             label.setText(str + " este actiunea selectata");
+            if(str == "GetClienti")
+            {
+                ServiceClient service2 = ServiceClient.getInstanta();
+                service2.getClienti();
+            }
+            if(str == "GetCopii")
+            {
+                ServiceClient service2 = ServiceClient.getInstanta();
+                service2.getCopii();
+            }
+            if(str == "GetStudenti")
+            {
+                ServiceClient service2 = ServiceClient.getInstanta();
+                service2.getStudenti();
+            }
+            if(str == "GetBilete")
+            {
+                ServiceClient service2 = ServiceClient.getInstanta();
+                service2.getClienti();
+            }
+        }
+
     }
 }
